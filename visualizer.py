@@ -4,31 +4,30 @@ from torch.utils.data import DataLoader
 import torchvision
 from torchvision import datasets
 from torchvision import transforms
-from PIL import Image
 import matplotlib.pyplot as plt
 from model import myModel
 
-model = myModel(in_f=1, hid_f=10, out_f=7)
-model.load_state_dict(torch.load("models/model1.pth"))
+model = myModel(in_f=1, hid_f=64, out_f=7)
+model.load_state_dict(torch.load("models/model4.pth"))
 
-train_dataset = datasets.ImageFolder(
-    root="dataset/train",
+test_dataset = datasets.ImageFolder(
+    root="dataset/test",
     transform=transforms.Compose([
         transforms.Grayscale(),
         transforms.ToTensor()
     ])
 )
 
-train_dataloader = DataLoader(
-    dataset=train_dataset,
+test_dataloader = DataLoader(
+    dataset=test_dataset,
     batch_size=16,
     shuffle=True
 )
 
-classes = train_dataset.classes
+classes = test_dataset.classes
 fig = plt.figure(figsize=(10,10))
 r, c = 4, 4
-images, labels = next(iter(train_dataloader))
+images, labels = next(iter(test_dataloader))
 for i in range(16):
     img, label = images[i], labels[i]
     with torch.inference_mode():

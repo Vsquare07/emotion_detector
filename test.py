@@ -4,9 +4,7 @@ from torch.utils.data import DataLoader
 import torchvision
 from torchvision import datasets
 from torchvision import transforms
-from PIL import Image
 from model import myModel
-import numpy
 from tqdm.auto import tqdm
 from torchmetrics import ConfusionMatrix
 from mlxtend.plotting import plot_confusion_matrix
@@ -26,8 +24,8 @@ test_dataloader = DataLoader(
     shuffle=True
 )
 
-model = myModel(in_f=1, hid_f=10, out_f=7)
-model.load_state_dict(torch.load("models/model1.pth"))
+model = myModel(in_f=1, hid_f=64, out_f=7)
+model.load_state_dict(torch.load("models/model4.pth"))
 loss_fn = nn.CrossEntropyLoss()
 def acc_fn(pred,y):
     total = len(y)

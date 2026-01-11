@@ -4,14 +4,13 @@ from torch.utils.data import DataLoader
 import torchvision
 from torchvision import datasets
 from torchvision import transforms
-from PIL import Image
 import matplotlib.pyplot as plt
 from model import myModel
 from tqdm.auto import tqdm
 
 DEVICE = "mps" if torch.backends.mps.is_available() else "cpu"
-EPOCHS = 1
-LR = 0.01
+EPOCHS = 50
+LR = 0.001
 
 train_dataset = datasets.ImageFolder(
     root="dataset/train",
@@ -27,9 +26,11 @@ train_dataloader = DataLoader(
     shuffle=True
 )
 
-model = myModel(in_f=1, hid_f=10, out_f=7).to(device=DEVICE)
+model = myModel(in_f=1, hid_f=64, out_f=7).to(device=DEVICE)
+model.load_state_dict(torch.load("models/model4.pth"))
+
 loss_fn = nn.CrossEntropyLoss()
-optimizer = torch.optim.SGD(params=model.parameters(), lr=LR)
+optimizer = torch.optim.Adam(params=model.parameters(), lr=LR, weight_decay=1e-4)
 def acc_fn(pred,y):
     total = len(y)
     correct = 0
@@ -68,4 +69,4 @@ plt.plot(epoch_arr, loss_arr)
 plt.xlabel("EPOCHS")
 plt.ylabel("LOSS")
 plt.show()
-torch.save(model.state_dict(), "models/model1.pth")
+torch.save(model.state_dict(), "models/model5.pth")
