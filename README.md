@@ -21,7 +21,7 @@ The project is modularized for clarity and scalability:
 
 ## 🧠 Model Specifications
 
-The architecture consists of three sequential convolutional blocks followed by a dense classifier.
+The architecture consists of three sequential convolutional blocks followed by a dense classifier. _The following output is generated from `model.py`_
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/649ebe35-67d9-425e-9ea4-dfb3791866a0" width="700" alt="Model Architecture">
@@ -48,13 +48,14 @@ The model was trained in two phases: **50 epochs** at $LR=0.01$ and **50 epochs*
 
 ### Performance Metrics
 * **Training Accuracy:** 77%
-* **Testing Accuracy:** 56%
+* **Testing Accuracy:** 56% _(generated from `test.py`)_
 
 The significant gap between training and testing accuracy suggests a high degree of **overfitting**, likely due to the model memorizing dataset-specific noise and the model getting confused between different emotions with same expression.
 
 The trained models are present in `/models` with the best one named as `model4(best).pth`
 
 ### Confusion Matrix
+_generated from `test.py`_
 <p align="center">
   <img src="https://github.com/user-attachments/assets/8d1dd1bd-98a6-490a-bfce-de20b0a03eac" width="600" alt="Confusion Matrix" />
 </p>
@@ -67,6 +68,7 @@ A critical takeaway from this project is the inherent flaw in the **FER-2013** l
 
 > **Key Format:** `True Label` -> `Predicted Label`
 
+<br>_the following images are generated from `visualizer.py`_
 <p align="center">
   <img src="https://github.com/user-attachments/assets/281c87d1-f10f-4a55-a1b8-54a1986f9c02" width="800" />
   <img src="https://github.com/user-attachments/assets/f24270e2-c7ee-42da-b025-95fab31e28e8" width="800" />
@@ -78,10 +80,10 @@ A critical takeaway from this project is the inherent flaw in the **FER-2013** l
 ---
 
 ## 🛠️ Environment
-Built on **macOS (M-series)** using:
 * **uv**: Python package management
-* **MPS**: Metal Performance Shaders for GPU acceleration
+* **MPS**: Metal Performance Shaders for GPU acceleration(for apple system). _One can also use CUDA(for nvidia GPU)_
 * **Libraries**: Refer to requirements.txt
+
 
 
 
