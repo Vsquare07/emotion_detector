@@ -52,6 +52,8 @@ The model was trained in two phases: **50 epochs** at $LR=0.01$ and **20 epochs*
 
 The significant gap between training and testing accuracy suggests a high degree of **overfitting**, likely due to the model memorizing dataset-specific noise and the model getting confused between different emotions with same expression.
 
+The trained models are present in `/models` with the best one named as `model4(best).pth`
+
 ### Confusion Matrix
 <p align="center">
   <img src="https://github.com/user-attachments/assets/8d1dd1bd-98a6-490a-bfce-de20b0a03eac" width="600" alt="Confusion Matrix" />
@@ -80,3 +82,4 @@ Built on **macOS (M-series)** using:
 * **uv**: Python package management
 * **MPS**: Metal Performance Shaders for GPU acceleration
 * **Libraries**: Refer to requirements.txt
+
