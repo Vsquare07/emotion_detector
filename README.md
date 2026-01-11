@@ -38,7 +38,7 @@ The architecture consists of three sequential convolutional blocks followed by a
 
 ## 📈 Training Results & Analytics
 
-The model was trained in two phases: **50 epochs** at $LR=0.01$ and **20 epochs** at $LR=0.001$.
+The model was trained in two phases: **50 epochs** at $LR=0.01$ and **50 epochs** at $LR=0.001$.
 
 ### Loss Convergence
 <p align="center">
@@ -82,5 +82,6 @@ Built on **macOS (M-series)** using:
 * **uv**: Python package management
 * **MPS**: Metal Performance Shaders for GPU acceleration
 * **Libraries**: Refer to requirements.txt
+
 
 
