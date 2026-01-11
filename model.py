@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 
+
 class myModel(nn.Module):
     def __init__(self, in_f, hid_f, out_f):
         super().__init__()
@@ -36,3 +37,9 @@ class myModel(nn.Module):
         x = self.layer4(x)
         x = self.classifier(x)
         return x
+    
+if __name__ == "__main__":
+    from torchinfo import summary
+    model = myModel(in_f=1, hid_f=10, out_f=7)
+    batch_size = 16
+    summary(model, input_size=(batch_size, 1, 48, 48))

@@ -5,6 +5,7 @@ import torchvision
 from torchvision import datasets
 from torchvision import transforms
 from PIL import Image
+import matplotlib.pyplot as plt
 from model import myModel
 from tqdm.auto import tqdm
 
@@ -37,6 +38,8 @@ def acc_fn(pred,y):
             correct += 1
     return (correct/total)*100
 
+loss_arr = []
+epoch_arr = []
 for epoch in tqdm(range(EPOCHS)):
     net_loss = 0
     net_acc = 0
@@ -58,6 +61,11 @@ for epoch in tqdm(range(EPOCHS)):
 
     net_loss /= len(train_dataloader)
     net_acc /= len(train_dataloader)
+    loss_arr.append(net_loss)
+    epoch_arr.append(epoch)
     print(f"Epoch : {epoch} ---> Loss : {net_loss:.3f}, Accuracy : {net_acc:.2f}%")
-#TODO: add a graph for epoch vs loss 
-torch.save(model.state_dict(), "models/model0.pth")
+plt.plot(epoch_arr, loss_arr)
+plt.xlabel("EPOCHS")
+plt.ylabel("LOSS")
+plt.show()
+torch.save(model.state_dict(), "models/model1.pth")
