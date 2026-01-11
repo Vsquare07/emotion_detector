@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from model import myModel
 
 model = myModel(in_f=1, hid_f=64, out_f=7)
-model.load_state_dict(torch.load("models/model4.pth"))
+model.load_state_dict(torch.load("models/model4(best).pth"))
 
 test_dataset = datasets.ImageFolder(
     root="dataset/test",

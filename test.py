@@ -25,7 +25,7 @@ test_dataloader = DataLoader(
 )
 
 model = myModel(in_f=1, hid_f=64, out_f=7)
-model.load_state_dict(torch.load("models/model4.pth"))
+model.load_state_dict(torch.load("models/model4(best).pth"))
 loss_fn = nn.CrossEntropyLoss()
 def acc_fn(pred,y):
     total = len(y)
