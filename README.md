@@ -1,10 +1,10 @@
-# 🎭 EmotioNet: Facial Expression Recognition
+# CODEFEST'26 IIT BHU: Facial Expression Recognition <a href="https://docs.google.com/document/d/1dxECWTUPwEAqB5bG1lmVBrcVxnf02lNuHl-S-U3YTDs/edit?usp=sharing">Vision Quest</a>
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
-A deep learning project focused on classifying human emotions from **48x48 grayscale images** using a custom Convolutional Neural Network (CNN) trained on the **FER-2013** dataset.
+A deep learning project focused on classifying human emotions from **48x48 grayscale images** using a custom Convolutional Neural Network (CNN) trained on the **FER-2013** dataset provided in problem statement.
 
 ---
 
@@ -82,4 +82,5 @@ Built on **macOS (M-series)** using:
 * **uv**: Python package management
 * **MPS**: Metal Performance Shaders for GPU acceleration
 * **Libraries**: Refer to requirements.txt
+
 
