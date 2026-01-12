@@ -66,7 +66,7 @@ _generated from `test.py`_
 
 A critical takeaway from this project is the inherent flaw in the **FER-2013** labels. Visualization reveals that human emotion is far more versatile than a single rigid label allows. The following examples show the flaw in predicting human expression just on the basis of facial expressions as expression can be related to more than one type of emotion.
 
-> **Key Format:** `True Label` -> `Predicted Label`
+> **Key Format:** `True Label` -> `Predicted Label` with the red ones being incorrect prediction and green ones being correct
 
 <br>_the following images are generated from `visualizer.py`_
 <p align="center">
@@ -83,6 +83,7 @@ A critical takeaway from this project is the inherent flaw in the **FER-2013** l
 * **uv**: Python package management
 * **MPS**: Metal Performance Shaders for GPU acceleration(for apple system). _One can also use CUDA(for nvidia GPU)_
 * **Libraries**: Refer to requirements.txt
+
 
 
 
