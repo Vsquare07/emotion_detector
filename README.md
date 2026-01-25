@@ -1,4 +1,4 @@
-# CODEFEST'26 IIT BHU: Facial Expression Recognition <a href="https://docs.google.com/document/d/1dxECWTUPwEAqB5bG1lmVBrcVxnf02lNuHl-S-U3YTDs/edit?usp=sharing">Vision Quest</a>
+# EMOTION DETECTOR
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
