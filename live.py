@@ -24,7 +24,7 @@ while True:
     if cv2.waitKey(1) & 0xFF == 27:
         break
     PIL_img = Image.fromarray(img)
-    facial_results = face_model(PIL_img)
+    facial_results = face_model(PIL_img, verbose=False)
     boxes = facial_results[0].boxes.xyxy
     if(len(boxes)!=0):
         for box in boxes:

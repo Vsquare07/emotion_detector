@@ -1,21 +1,20 @@
-# CODESTART'26 IIT BHU: Facial Expression Recognition <a href="https://docs.google.com/document/d/1dxECWTUPwEAqB5bG1lmVBrcVxnf02lNuHl-S-U3YTDs/edit?usp=sharing">Vision Quest</a>
+# CODEFEST'26 IIT BHU: Facial Expression Recognition <a href="https://docs.google.com/document/d/1dxECWTUPwEAqB5bG1lmVBrcVxnf02lNuHl-S-U3YTDs/edit?usp=sharing">Vision Quest</a>
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
-A deep learning project focused on classifying human emotions from **48x48 grayscale images** using a custom Convolutional Neural Network (CNN) trained on the **FER-2013** dataset provided in problem statement.
+A deep learning project focused on classifying human emotions from **48x48 grayscale images** using a custom Convolutional Neural Network (CNN) trained on the **FER-2013** dataset and <a href="https://github.com/derronqi/yolov8-face/tree/main">Face detector YOLO model</a>.
 
 ---
 
 ## 📂 Project Architecture
 
-The project is modularized for clarity and scalability:
-
 * **`model.py`**: Contains the `myModel` class architecture.
 * **`train.py`**: Handles the training pipeline, data loading, and optimization.
 * **`test.py`**: Evaluation script that generates accuracy metrics and the confusion matrix.
 * **`visualizer.py`**: A utility to overlay actual vs. predicted labels on sample images.
+* **`live.py`**: Uses opencv to send a live webcam pictures to predict the person's emotion. Run `python3 live.py`!!!
 
 ---
 
@@ -65,6 +64,8 @@ _generated from `test.py`_
 ## ⚠️ Dataset Limitations & Observations
 
 A critical takeaway from this project is the inherent flaw in the **FER-2013** labels. Visualization reveals that human emotion is far more versatile than a single rigid label allows. The following examples show the flaw in predicting human expression just on the basis of facial expressions as expression can be related to more than one type of emotion.
+
+However the results of live video is positive apart from a few fluctuations. The model is able to predict happy, sad, angry and surprise emotions perfectly. The remaining emotions are a bit hard to predict.  
 
 > **Key Format:** `True Label` -> `Predicted Label` with the red ones being incorrect prediction and green ones being correct
 
